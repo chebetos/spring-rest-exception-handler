@@ -60,7 +60,7 @@ public class RestHandlerExceptionResolver extends AbstractHandlerExceptionResolv
 
     private List<HttpMessageConverter<?>> messageConverters = getDefaultHttpMessageConverters();
 
-    private Map<Class<? extends Exception>, RestExceptionHandler> handlers = new LinkedHashMap<>();
+    private Map<Class<? extends Exception>, RestExceptionHandler> handlers = new LinkedHashMap<Class<? extends Exception>, RestExceptionHandler>();
 
     private MediaType defaultContentType = APPLICATION_XML;
 

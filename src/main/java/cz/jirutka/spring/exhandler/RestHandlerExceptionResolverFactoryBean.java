@@ -158,7 +158,7 @@ public class RestHandlerExceptionResolverFactoryBean implements FactoryBean<Rest
             return (HttpStatus) value;
 
         } else if (value instanceof Integer) {
-            return HttpStatus.valueOf((int) value);
+            return HttpStatus.valueOf((Integer) value);
 
         } else if (value instanceof String) {
             return HttpStatus.valueOf(Integer.valueOf((String) value));

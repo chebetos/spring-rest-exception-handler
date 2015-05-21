@@ -41,7 +41,7 @@ public class ValidationErrorMessage extends ErrorMessage {
 
     private static final long serialVersionUID = 1L;
 
-    private List<Error> errors = new ArrayList<>(6);
+    private List<Error> errors = new ArrayList<Error>(6);
 
 
     public ValidationErrorMessage(ErrorMessage orig) {

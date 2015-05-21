@@ -69,7 +69,7 @@ public abstract class AbstractRestExceptionHandler<E extends Exception, T> imple
         T body = createBody(ex, req);
         HttpHeaders headers = createHeaders(ex, req);
 
-        return new ResponseEntity<>(body, headers, getStatus());
+        return new ResponseEntity<T>(body, headers, getStatus());
     }
 
     public Class<E> getExceptionClass() {

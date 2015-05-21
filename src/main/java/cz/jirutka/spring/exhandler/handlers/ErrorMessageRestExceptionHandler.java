@@ -90,7 +90,7 @@ public class ErrorMessageRestExceptionHandler<E extends Exception>
 
         String template = getMessage(key, LocaleContextHolder.getLocale());
 
-        Map<String, Object> vars = new HashMap<>(2);
+        Map<String, Object> vars = new HashMap<String, Object>(2);
         vars.put("ex", exception);
         vars.put("req", request);
 

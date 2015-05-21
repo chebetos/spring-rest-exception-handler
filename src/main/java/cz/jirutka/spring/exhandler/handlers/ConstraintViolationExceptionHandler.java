@@ -82,7 +82,7 @@ public class ConstraintViolationExceptionHandler extends ErrorMessageRestExcepti
 
     private Node findLastNonEmptyPathNode(Path path) {
 
-        List<Node> list = new ArrayList<>();
+        List<Node> list = new ArrayList<Node>();
         for (Iterator<Node> it = path.iterator(); it.hasNext(); ) {
             list.add(it.next());
         }

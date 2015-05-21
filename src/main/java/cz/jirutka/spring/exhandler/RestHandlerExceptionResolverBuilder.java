@@ -59,7 +59,7 @@ public class RestHandlerExceptionResolverBuilder {
 
     public static final String DEFAULT_MESSAGES_BASENAME = "classpath:/cz/jirutka/spring/exhandler/messages";
 
-    private final Map<Class, RestExceptionHandler> exceptionHandlers = new HashMap<>();
+    private final Map<Class, RestExceptionHandler> exceptionHandlers = new HashMap<Class, RestExceptionHandler>();
 
     @Setter(NONE) // to not conflict with overloaded setter
     private MediaType defaultContentType;
@@ -211,8 +211,8 @@ public class RestHandlerExceptionResolverBuilder {
      */
     public RestHandlerExceptionResolverBuilder addErrorMessageHandler(
             Class<? extends Exception> exceptionClass, HttpStatus status) {
-
-        return addHandler(new ErrorMessageRestExceptionHandler<>(exceptionClass, status));
+    	ErrorMessageRestExceptionHandler<? extends Exception> exHandler = new ErrorMessageRestExceptionHandler(exceptionClass, status);
+        return addHandler(exHandler);
     }
 
 
@@ -230,7 +230,7 @@ public class RestHandlerExceptionResolverBuilder {
 
     private Map<Class, RestExceptionHandler> getDefaultHandlers() {
 
-        Map<Class, RestExceptionHandler> map = new HashMap<>();
+        Map<Class, RestExceptionHandler> map = new HashMap<Class, RestExceptionHandler>();
 
         map.put( NoSuchRequestHandlingMethodException.class, new NoSuchRequestHandlingMethodExceptionHandler() );
         map.put( HttpRequestMethodNotSupportedException.class, new HttpRequestMethodNotSupportedExceptionHandler() );

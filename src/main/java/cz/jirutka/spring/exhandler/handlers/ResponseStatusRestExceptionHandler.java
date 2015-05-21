@@ -34,6 +34,6 @@ public class ResponseStatusRestExceptionHandler implements RestExceptionHandler<
     }
 
     public ResponseEntity<Void> handleException(Exception ex, HttpServletRequest request) {
-        return new ResponseEntity<>(status);
+        return new ResponseEntity<Void>(status);
     }
 }

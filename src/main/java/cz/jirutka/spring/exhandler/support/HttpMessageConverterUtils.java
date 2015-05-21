@@ -82,7 +82,7 @@ public abstract class HttpMessageConverterUtils {
     @SuppressWarnings("deprecation")
     public static List<HttpMessageConverter<?>> getDefaultHttpMessageConverters() {
 
-        List<HttpMessageConverter<?>> converters = new ArrayList<>();
+        List<HttpMessageConverter<?>> converters = new ArrayList<HttpMessageConverter<?>>();
 
         StringHttpMessageConverter stringConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
         stringConverter.setWriteAcceptCharset(false); // See SPR-7316
@@ -104,7 +104,9 @@ public abstract class HttpMessageConverterUtils {
 
             } catch (ClassNotFoundException ex) {
                 // Ignore it, this class is not available since Spring 4.1.0.
-            } catch (InstantiationException | IllegalAccessException ex) {
+            } catch (IllegalAccessException ex) {
+                throw new IllegalStateException(ex);
+            } catch (InstantiationException ex) {
                 throw new IllegalStateException(ex);
             }
         }
