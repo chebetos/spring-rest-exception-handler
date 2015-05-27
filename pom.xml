@@ -253,6 +253,12 @@
                 	<skip>true</skip>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                	<skipITs>true</skipITs>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 </project>
