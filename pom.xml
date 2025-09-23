@@ -62,7 +62,7 @@
 
     <properties>
         <!-- Recommended version is 4.0.0 or newer -->
-        <spring.version>3.2.13.RELEASE</spring.version>
+        <spring.version>6.2.11</spring.version>
         <jackson1.version>1.9.13</jackson1.version>
         <jackson2.version>2.3.2</jackson2.version>
         <java.version>1.6</java.version>
